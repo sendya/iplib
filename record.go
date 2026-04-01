@@ -13,6 +13,8 @@ type Record struct {
 	Region string `json:"region,omitempty"`
 	// RegionName is the human-readable region / state name.
 	RegionName string `json:"region_name,omitempty"`
+	// Province is the human-readable province name.
+	Province string `json:"province,omitempty"`
 	// City is the city name.
 	City string `json:"city,omitempty"`
 	// PostalCode is the postal / ZIP code.
