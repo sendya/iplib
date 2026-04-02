@@ -20,7 +20,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(rec.Country, rec.City) // AU Brisbane
+	fmt.Println(rec.ContinentName, rec.Country, rec.City) // AU Brisbane
 
 	// Lookup by net.IP.
 	rec, err = db.LookupIP(net.ParseIP("8.8.8.8"))

@@ -201,6 +201,13 @@ func (db *DB) decodeRecord(dataOffset uint32, dataLength uint16) (*Record, error
 	if err := json.Unmarshal(db.data[dataOffset:end], rec); err != nil {
 		return nil, fmt.Errorf("iplib: decode record: %w", err)
 	}
+	rec.ContinentCode = GetContinentByCountry(rec.Country)
+	// CN only
+	if rec.Country == "CN" {
+		rec.ContinentName = GetContinentName(rec.ContinentCode).NameCN
+	} else {
+		rec.ContinentName = GetContinentName(rec.ContinentCode).Name
+	}
 	return rec, nil
 }
 

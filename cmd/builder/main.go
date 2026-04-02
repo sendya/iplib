@@ -69,7 +69,7 @@ func loadSegments(w *iplib.Writer, scanner *bufio.Scanner) {
 		record := &iplib.Record{
 			Country:     fields[6],
 			CountryName: fields[2],
-			Province:    fields[3],
+			Region:      fields[3],
 			City:        fields[4],
 			ISP:         fields[5],
 		}

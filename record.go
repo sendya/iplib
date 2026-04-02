@@ -5,6 +5,10 @@ import "time"
 // Record holds the GeoIP information associated with an IP address or range.
 // All fields are optional; unused fields are omitted when serialised to JSON.
 type Record struct {
+	// ContinentCode is the ISO 3166-1 alpha-2 continent code (e.g. "AS").
+	ContinentCode string `json:"continent_code,omitempty"`
+	// ContinentName is the human-readable continent name (e.g. "Asia").
+	ContinentName string `json:"continent_name,omitempty"` // Asia
 	// Country is the ISO 3166-1 alpha-2 country code (e.g. "US").
 	Country string `json:"country,omitempty"`
 	// CountryName is the human-readable country name (e.g. "United States").
@@ -13,8 +17,6 @@ type Record struct {
 	Region string `json:"region,omitempty"`
 	// RegionName is the human-readable region / state name.
 	RegionName string `json:"region_name,omitempty"`
-	// Province is the human-readable province name.
-	Province string `json:"province,omitempty"`
 	// City is the city name.
 	City string `json:"city,omitempty"`
 	// PostalCode is the postal / ZIP code.
